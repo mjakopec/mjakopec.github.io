@@ -1,0 +1,32 @@
+body {
+    font-family:Arial, Helvetica, sans-serif;
+}
+div#latest-posts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div#latest-posts > div {
+    width: 500px;
+    margin: 10px;
+    padding: 10px;
+    color: #fff;
+    background-color: rgb(34, 49, 68);
+    border-radius: 5px;
+    line-height: 25px;
+}
+
+div#latest-posts > div a {
+    color: #fff;
+
+}
+
+div#latest-posts.single > div  {
+    padding: 30px;
+    line-height: 30px;
+}
+
+figure img{width: 100%;}
+.menu{width: 100%; display: block;text-align: center;}
+.menu a {background-color: rgb(34, 49, 68); border-radius: 10px; color: #fff; padding: 10px 10px 10px 10px;font-size: 16px;}
