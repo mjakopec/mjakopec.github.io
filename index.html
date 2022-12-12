@@ -17,7 +17,7 @@ fetch(url)
     .then(response => response.json())
     .then((data) => {
     data.forEach(post => {
-        results.innerHTML += "<div class='post'><h2>"+post.title.rendered+"</h2><p>"+post.excerpt.rendered+"</p><a href='post.html?id="+post.id+"'>Read more</p></div>";
+        results.innerHTML = "<div class='post'><h2>"+post.title.rendered+"</h2><p>"+post.excerpt.rendered+"</p><a href='post.html?id="+post.id+"'>Read more</p></div>"+results.innerHTML;
         })
 });
 </script>
