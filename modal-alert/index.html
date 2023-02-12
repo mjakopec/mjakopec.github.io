@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<title>Web components Alert</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!--attributes only ones slot multiple-->
+    <my-alert 
+    data-head="Alert heading" 
+    data-text="Something is wrong!" 
+    data-url="https://cdn-icons-png.flaticon.com/512/1047/1047711.png" 
+    data-icon="fa-solid fa-xmark">
+        <div slot="some_data">Data 1</div>
+        <div slot="some_data">Data 2</div>
+        Something to show
+    </my-alert>
+    <script src="alert.js"></script>
+</body>
+</html>
