@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+my-alert::part(content){
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+    border-radius: 20px;
+    padding: 30px 30px 70px;   
+}
+my-alert::part(close){
+    width: 30px;
+    font-size: 20px;
+    color: #c0c5cb;
+    align-self: flex-end;
+    background-color: transparent;
+    border: none;
+    margin-bottom: 10px;
+}
+my-alert::part(modal-text){
+    font-family: Roboto;
+}
+my-alert::part(modal-head){
+    font-family: Roboto;
+}
+my-alert::part(modal-btn){background-color: #ed6755;
+    border: none;
+    border-radius: 5px;
+    width: 200px;
+    padding: 14px;
+    font-size: 16px;
+    color: white;
+    box-shadow: 0px 6px 18px -5px rgba(237, 103, 85, 1);
+}
