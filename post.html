@@ -12,7 +12,7 @@
 <script type="text/javascript">
     let searchParams = new URLSearchParams(window.location.search);
     let postId = searchParams.get('id');
-    var url="https://data.jakopec.net/wp-json/wp/v2/components/" + postId;
+    var url="https://data.jakopec.net/wp-json/wp/v2/web_components/" + postId;
     
     const results = document.querySelector('#latest-posts');
     fetch(url)
