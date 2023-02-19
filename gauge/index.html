@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Gauge</title>
+    </head>
+    <body>
+      <my-gauge value="13.5" title="Voltage (V)" min="0" max="100" w="200">
+        <slot name="slices">
+            <div class="marker" style="--bg: #F1433F; --trigg: 0"></div>
+            <div class="marker" style="--bg: #F7E967; --trigg: 22"></div>
+            <div class="marker" style="--bg: #3CB371; --trigg: 45"></div>
+            <div class="marker" style="--bg: #F7E967; --trigg: 67"></div>
+            <div class="marker" style="--bg: #F1433F; --trigg: 82"></div>
+        </slot>
+      </my-gauge>
+      <input type="button" value="change" onclick="clickme()">
+      <script>
+        function clickme(){
+          let slotic = document.querySelector('my-gauge');
+          slotic.setAttribute("value","20");
+          slotic.setAttribute("title","Current");
+        }
+      </script>
+      <script src="gauge.js" type="module"></script>
+      <script>
+      </script>
+    </body>
+</html>
