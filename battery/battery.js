@@ -40,7 +40,7 @@ export class Battery extends HTMLElement {
         
         #batteryLevel {
             border-radius: 8px 0px 0px 8px;
-            width: ${this._trV};
+            width: ${this._trV}%;
             height: 90px;
         }
         .green  {background-color: #73AD21; color:#000;}
