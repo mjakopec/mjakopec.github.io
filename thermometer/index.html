@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Thermometer</title>
+    </head>
+    <body>
+      <my-thermometer min="0" max="100" value="75" color="green">
+      </my-thermometer>
+        <input type="button" value="change" onclick="clickme()">
+      <script>
+        function clickme(){
+          let slotic = document.querySelector('my-thermometer');
+          slotic.setAttribute("value","80");
+          slotic.setAttribute("color","red");
+        }
+      </script>
+      <script src="thermometer.js" type="module"></script>
+      <script>
+      </script>
+    </body>
+</html>
