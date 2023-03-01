@@ -1,24 +1,27 @@
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
-        <title>Live battery percentage</title>
-    </head>
-    <body>
-      <my-battery value="78%" color="yellow">
-      </my-battery>
-      <input type="button" value="change" onclick="clickme()">
-      <script>
-        function clickme(){
-          let slotic = document.querySelector('my-battery');
-          slotic.setAttribute("value","58%");
-          slotic.setAttribute("color","red");
-        }
-      </script>
-      <script src="battery.js" type="module"></script>
-      <script>
-      </script>
-    </body>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<title>Live battery percentage</title>
+	</head>
+	<body>
+		<my-battery value="78" color="yellow"></my-battery>
+
+		<input type="button" value="25" onclick="updateBattery(this)" />
+		<input type="button" value="50" onclick="updateBattery(this)" />
+		<input type="button" value="75" onclick="updateBattery(this)" />
+		<input type="button" value="100" onclick="updateBattery(this)" />
+		<br />
+		<input
+			type="range"
+			min="0"
+			max="100"
+			value="78"
+			oninput="updateBattery(this)"
+		/>
+		<script src="battery.js" type="module"></script>
+		<script src="battery-util.js" type="text/javascript"></script>
+	</body>
 </html>
