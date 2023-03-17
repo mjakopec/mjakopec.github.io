@@ -1,0 +1,48 @@
+@keyframes needleRotation {
+	0% {
+		transform: rotate(-90deg);
+	}
+
+	8% {
+		transform: rotate(
+			calc((var(--actual-value) / var(--max) * 180deg - 75deg))
+		);
+	}
+
+	25% {
+		transform: rotate(
+			calc((var(--actual-value) / var(--max) * 180deg - 100deg))
+		);
+	}
+
+	48% {
+		transform: rotate(
+			calc((var(--actual-value) / var(--max) * 180deg - 87deg))
+		);
+	}
+
+	63% {
+		transform: rotate(
+			calc((var(--actual-value) / var(--max) * 180deg - 92deg))
+		);
+	}
+
+	100% {
+		transform: rotate(
+			calc((var(--actual-value) / var(--max) * 180deg - 90deg))
+		);
+	}
+}
+
+@keyframes gaugeRotation {
+	0% {
+		transform: rotate(0);
+	}
+	100% {
+		transform: rotate(
+			calc(
+				(var(--trigg) - var(--min)) / (var(--max) - var(--min)) * 180deg
+			)
+		);
+	}
+}
