@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Awesome headless blog</title>
+  <link rel="stylesheet" href="styles.css?v=1.0">
+</head>
+  <body><h1> Headless website graphql</h1>
+<div id="latest-posts">
+</div>
+<script>
+var url="https://www.osmica.org/graphql/";
+const results = document.querySelector('#latest-posts');
+fetch(url,{
+    method:"POST",
+    headers:{"content-type":"application/json"},
+    body:JSON.stringify({
+        query:`query {
+            pages {
+                nodes {
+                    title
+                }
+            }
+        }`
+    })
+})
+    .then(res => res.json())
+    //.then(res => {console.log(res.data.posts.nodes)}); it works!
+    .then((res) => {
+    res.data.pages.nodes.forEach(post => {
+        //results.innerHTML = "<div class='post'><h2>"+post.title+"</h2></div>"+results.innerHTML;
+        results.innerHTML = "<div class='post'><h2>"+post.title+"</h2><a href='post.html?id="+post.title+"'>Visit site</a></div>"+results.innerHTML;
+        })
+    });
+</script>
+</body>
+</head>
+</html>
