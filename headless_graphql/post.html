@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Awesome headless blog</title>
+  <link rel="stylesheet" href="styles.css?v=1.0">
+</head>
+<body>
+  <div class="menu"><h1><a class="button" href="./">Blog list</a></h1></div>
+    <div id="latest-posts" class="single"></div>
+<script type="text/javascript">
+    let searchParams = new URLSearchParams(window.location.search);
+    let postId = searchParams.get('id');
+    var url="https://www.osmica.org/graphql/";
+    
+    const results = document.querySelector('#latest-posts');
+    fetch(url,{
+    method:"POST",
+    headers:{"content-type":"application/json"},
+    body:JSON.stringify({
+        query:`query {
+            pages (where:{title: "${postId}"}){
+                nodes{
+                    title
+                    content
+                }
+            }
+        }`
+    })
+})
+    .then(response => response.json())
+    .then((res) => {
+    res.data.pages.nodes.forEach(post => {
+            results.innerHTML = "<div class='post'><h2>"+ post.title + "</h2><p>"+ post.content + "</p></div>";
+    });
+    });
+</script>
+</body>
+</html>
